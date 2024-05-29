@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speed typing</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <span class="arow">&#8594;</span>
+    <div class="game">
+        <h2 class="name">speed typing test game</h2>
+        <div class="lvls">
+            <h3>levels</h3>
+            <form action="">
+                <div>
+                    <input type="radio" name="lvls" id="esay" value="Easy">
+                    <label for="esay">Easy</label>
+                </div>
+                <div>
+                    <input type="radio" name="lvls" id="noraml" value="Normal">
+                    <label for="noraml">Normal</label>
+                </div>
+                <div>
+                    <input type="radio" name="lvls" id="hard" value="Hard">
+                    <label for="hard">Hard</label>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <div class="massage">
+                you are playing on
+                <span class="level"></span> level & you have <span class="second"></span> seconds to type the word
+            </div>
+            <button class="start">start playing</button>
+            <div class="the-word"></div>
+            <input type="text" id="typing">
+            <div class="uncomig-words">
+                words will show later
+            </div>
+            <div class="control">
+                <div class="time"> time left : <span class="left-seconds"></span> seconds </div>
+                <div class="score">score : <span class="got">0</span> from <span class="total"></span>
+                </div>
+            </div>
+            <div class="finish">
+                <span></span>
+                <button class="reset">reset</button>
+            </div>
+        </div>
+    </div>
+    <audio class="monkey" src="/audio/mixkit-cartoon-monkey-mocking-laugh-107.wav"></audio>
+    <audio class="nice" src="/audio/mixkit-fairy-arcade-sparkle-866.wav"></audio>
+    <audio class="game-over" src="/audio/game-over-160612.mp3"></audio>
+    <audio class="congrat" src="/audio/congratulations-deep-voice-172193.mp3"></audio>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
