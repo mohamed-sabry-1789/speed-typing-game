@@ -98,7 +98,6 @@ inputs.forEach((input) => {
                         clearInterval(timer)
                         creatMassge("GAME OVER", "bad")
                         inputTyping.disabled = true;
-
                         document.querySelector(".game-over").play()
                     }
 
