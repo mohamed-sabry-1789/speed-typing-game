@@ -10,7 +10,29 @@
     text-transform: capitalize;
 }
 
+.color-red {
+    color: red
+}
 
+.color-green {
+    color: green
+}
+
+.color-blue {
+    color: blue
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .lvls h3 {
     margin: 10px;
@@ -27,9 +49,13 @@
     display: flex;
     margin: 15px;
     gap: 10px;
+    font-size: 25px;
 
 }
 
+.lvls {
+    margin: 0 60px;
+}
 
 
 .game {
@@ -92,12 +118,20 @@
 }
 
 .the-word {
+
     text-align: center;
     font-weight: bold;
     font-size: 60px;
     color: var(--main-color);
     user-select: none;
     margin: 10px;
+
+
+
+}
+
+.red {
+    color: red;
 }
 
 #typing {
@@ -115,7 +149,7 @@
 .uncomig-words {
     background-color: white;
     margin: 15px 0;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid var(--main-color2);

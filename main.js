@@ -30,7 +30,7 @@ const words = [
 const theWord = document.querySelector(".the-word")
 const startBtn = document.querySelector(".start")
 const uncomingWords = document.querySelector(".uncomig-words")
-const lvlSpan = document.querySelector(".level")
+const lvlSpan = document.querySelector(".levels")
 const lvlScound = document.querySelector(".second")
 const timeLeft = document.querySelector(".left-seconds")
 const gotScore = document.querySelector(".got")
@@ -52,10 +52,12 @@ resetBtn.addEventListener("click", () => {
     location.reload()
 })
 startBtn.addEventListener("click", () => {
+
     document.querySelector(".monkey").play()
     document.querySelector(".arow").style.display = "block"
 })
 inputs.forEach((input) => {
+
     input.addEventListener("click", () => {
         document.querySelector(".arow").style.display = "none"
         let defultLevls = input.value
@@ -85,6 +87,15 @@ inputs.forEach((input) => {
                 if (timeLeft.innerHTML > 0) {
                     timeLeft.innerHTML--
 
+
+                    if (timeLeft.innerHTML <= "2") {
+                        document.querySelector(".time-out").play()
+                        timeLeft.style.color = "red"
+
+                    } else {
+                        document.querySelector(".time-out").pause()
+                        timeLeft.style.color = "rgb(37, 190, 144)"
+                    }
                 }
 
                 if (timeLeft.innerHTML === "0") {
@@ -99,6 +110,8 @@ inputs.forEach((input) => {
                         creatMassge("GAME OVER", "bad")
                         inputTyping.disabled = true;
                         document.querySelector(".game-over").play()
+                        local(gotScore, defultLevls)
+
                     }
 
                 }
@@ -108,9 +121,11 @@ inputs.forEach((input) => {
                     inputTyping.disabled = true;
                     resetBtn.style.color = "green"
                     document.querySelector(".congrat").play()
+                    local(gotScore, defultLevls)
                 }
 
             }, 1000)
+
         })
 
     })
@@ -136,25 +151,40 @@ inputTyping.onpaste = () => {
 function genwords(sucnds) {
 
     uncomingWords.innerHTML = ""
-    let randomWords = words[Math.floor(Math.random() * words.length)]
-    console.log(randomWords)
-    theWord.innerHTML = randomWords
-    let a = words.indexOf(randomWords)
-    words.splice(a, 1)
-    for (let i = 0; i < words.length; i++) {
-        let div = document.createElement("div")
-        div.append(words[i])
-        uncomingWords.append(div)
+    let randomWord = words[Math.floor(Math.random() * words.length)]
+    if (randomWord) {
+
+
+        theWord.innerHTML = randomWord
+        let wordIndex = words.indexOf(randomWord)
+        words.splice(wordIndex, 1)
+        for (let i = 0; i < words.length; i++) {
+            let div = document.createElement("div")
+            div.append(words[i])
+            uncomingWords.append(div)
+        }
+        timeLeft.innerHTML = sucnds
+
     }
-    timeLeft.innerHTML = sucnds
+}
 
+function local(score, lev) {
+    let date = new Date().toLocaleDateString();
 
-
-
-
+    localStorage.setItem("date", date)
+    localStorage.setItem("score", score.innerHTML)
+    localStorage.setItem("level", lev)
 }
 
 
+
+let s = localStorage.getItem("score")
+let d = localStorage.getItem("date")
+let l = localStorage.getItem("level")
+
+document.querySelector(".score").innerHTML = s
+document.querySelector(".date").innerHTML = d
+document.querySelector(".level").innerHTML = l
 
 
 

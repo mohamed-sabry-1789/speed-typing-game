@@ -12,27 +12,34 @@
     <span class="arow">&#8594;</span>
     <div class="game">
         <h2 class="name">speed typing test game</h2>
-        <div class="lvls">
-            <h3>levels</h3>
-            <form action="">
-                <div>
-                    <input type="radio" name="lvls" id="esay" value="Easy">
-                    <label for="esay">Easy</label>
-                </div>
-                <div>
-                    <input type="radio" name="lvls" id="noraml" value="Normal">
-                    <label for="noraml">Normal</label>
-                </div>
-                <div>
-                    <input type="radio" name="lvls" id="hard" value="Hard">
-                    <label for="hard">Hard</label>
-                </div>
-            </form>
+        <div class="lvls flex">
+            <div>
+                <h3>levels</h3>
+                <form action="">
+                    <div>
+                        <input type="radio" name="lvls" id="esay" value="Easy">
+                        <label for="esay">Easy</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="lvls" id="noraml" value="Normal">
+                        <label for="noraml">Normal</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="lvls" id="hard" value="Hard">
+                        <label for="hard">Hard</label>
+                    </div>
+                </form>
+            </div>
+            <div class="flex-column">
+                <span class="color-red"> last Date : <span class="date"></span></span>
+                <span class="color-green">old score : <span class="score"></span></span>
+                <span class="color-blue">level : <span class="level"></span></span>
+            </div>
         </div>
         <div class="container">
             <div class="massage">
                 you are playing on
-                <span class="level"></span> level & you have <span class="second"></span> seconds to type the word
+                <span class="levels"></span> level & you have <span class="second"></span> seconds to type the word
             </div>
             <button class="start">start playing</button>
             <div class="the-word"></div>
@@ -55,6 +62,7 @@
     <audio class="nice" src="/audio/mixkit-fairy-arcade-sparkle-866.wav"></audio>
     <audio class="game-over" src="/audio/game-over-160612.mp3"></audio>
     <audio class="congrat" src="/audio/congratulations-deep-voice-172193.mp3"></audio>
+    <audio class="time-out" src="/audio/ticking-bomb-90319.mp3"></audio>
 
     <script src="main.js"></script>
 </body>
